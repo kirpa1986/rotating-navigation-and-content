@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #222;
+    position: relative;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 0.6rem;
+}
+
+.container {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container .menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10;
+}
+
+.container .menu-container .circle {
+    background-color: orange;
+    padding: 7rem;
+    width: 1rem;
+    height: 1rem;
+    display:relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: transform 0.7s linear;
+}
+
+.container.rotated .menu-container .circle {
+    transform: rotate(-90deg);
+}
+
+.container .menu-container .circle .open, 
+.container .menu-container .circle .close {
+    position: absolute;
+    width:2rem;
+    left: 50%;
+    top: 50%;
+    border: none;
+    color: #fff;
+    background: transparent;
+    font-size: 2rem;
+    text-align: center;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+}
+
+ .container .circle .open {
+    transform: translate(-50%) rotate(-45deg);
+    transform-origin: top center;
+    
+}   
+
+.container .circle .close {
+    transform:  translateX(-50%) rotate(45deg);
+    transform-origin: top right;
+ 
+}   
+
+.container .circle .close i {
+    transform: rotate(90deg);
+}  
+
+
+
+.container .content {
+    position: relative;
+    z-index: 1;
+    background: #333;
+    transition: transform 0.7s linear;
+    transform-origin: top left;
+    padding: 10vmax;
+    
+}
+
+.container .content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 1000px;
+    color:white;
+}
+
+
+.container.rotated .content {
+    transform: rotate(-25deg);
+
+}
+
+nav.show-nav li {
+    transform: translateX(0);
+}
+
+nav {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 2rem;
+}
+
+nav ul li {
+    color: #fff;
+    text-transform: uppercase;
+    margin: 2.5rem 0;
+    transform: translate(-200%);
+    transition: transform 0.4s ease-in;
+}
+
+nav ul li:nth-child(2) {
+    margin-left: 1.5rem;
+    transition-delay: 0.2s;
+}
+
+nav ul li:nth-child(3) {
+    margin-left: 3rem;
+    transition-delay: 0.4s;
+}
+
+
+
+nav ul li + li + li {
+    margin-left: 3rem;
+}
+
+
+nav ul li i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
